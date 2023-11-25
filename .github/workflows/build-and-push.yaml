@@ -20,11 +20,11 @@ jobs:
         with:
           go-version: 1.17
 
-      - name: Install swag
-        run: go get -u github.com/swaggo/swag/cmd/swag
+    #   - name: Install swag
+    #     run: go get -u github.com/swaggo/swag/cmd/swag
 
-      - name: Generate Swagger documentation
-        run: swag init
+    #   - name: Generate Swagger documentation
+    #     run: swag init
 
       - name: Build
         run: go build -o main
