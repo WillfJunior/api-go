@@ -1,0 +1,32 @@
+# docker-compose.yml
+
+version: '3'
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: wjjunior
+      POSTGRES_PASSWORD: Go123
+      POSTGRES_DB: clientdb
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+  api:
+    build:
+      context: .
+    container_name: api_container
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
