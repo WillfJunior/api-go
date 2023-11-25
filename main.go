@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/WillfJunior/api-go/controllers"
-	_ "github.com/WillfJunior/api-go/docs"
 	"github.com/labstack/echo/v4"
 	echoSwagger "github.com/swaggo/echo-swagger"
 )
